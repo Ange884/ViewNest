@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { View, Text } from 'react-native';
-import LandingScreen from '../components/landing';
+import LandingScreen from '../../components/landing.jsx';
 export default function MainScreen() {
   return (
          <LandingScreen />

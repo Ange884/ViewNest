@@ -1,5 +1,6 @@
 import React from "react";
-import { View } from "react-native-web";
+import { View,Image } from "react-native-web";
+import { StyleSheet } from "react-native";
 export default function LandingScreen(){
     return(
         <View style={styles.container}>
