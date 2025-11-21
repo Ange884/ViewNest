@@ -1,10 +1,19 @@
 import { StyleSheet } from 'react-native';
 import { View, Text } from 'react-native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LandingScreen from '../../components/landing.jsx';
-import { StackRouter } from '@react-navigation/native';
+import WelcomeScreen from '../../components/welcome.jsx';
+const Stack = createNativeStackNavigator();
+
 export default function MainScreen() {
   return (
-         <LandingScreen />
+    
+          <Stack.Navigator initialRouteName="landing"
+           screenOptions={{headerShown:false,}}>
+            <Stack.Screen name="landing" component={LandingScreen} />
+            <Stack.Screen name="welcome" component={WelcomeScreen} />
+          </Stack.Navigator>
+    
   );
 }
 

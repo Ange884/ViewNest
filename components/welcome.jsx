@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-export default function LandingScreen({ navigation }) {
+export default function WelcomeScreen({navigation}) {
   return (
     <View style={styles.container}>
       <Image source={require('../assets/images/landing.png')} style={styles.image} />
