@@ -1,12 +1,28 @@
 import React from "react";
 import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { useFonts,
+  Poppins_400Regular,
+  Poppins_600SemiBold,
+  Poppins_700Bold
+} from "@expo-google-fonts/poppins";
+import { ActivityIndicator} from "react-native";
 
 export default function LandingScreen({ navigation }) {
+    const [fontsLoaded] = useFonts({
+    Poppins_400Regular,
+    Poppins_600SemiBold,
+    Poppins_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return <ActivityIndicator size="large" style={{ flex: 1 }} />;
+  }
+
   return (
     <View style={styles.container}>
       <Image source={require('../assets/images/landing.png')} style={styles.image} />
 
-      <Text style={styles.title}>ViewNest</Text>
+      <Text style={[styles.title, {fontFamily:"poppins_700Bold"}]}>ViewNest</Text>
 
       <TouchableOpacity
         onPress={() => navigation.navigate("welcome")}
