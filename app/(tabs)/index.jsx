@@ -3,13 +3,7 @@ import { View, Text } from 'react-native';
 export default function TabOneScreen() {
    console.log("mounted");
   return (
-
-    <>
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab Oneeeeeeeeeeeeeeeeeeeeeeeeeeeeeejjjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkkkkkkkkkkkklllllllmkbhdrfset</Text>
-      <View style={styles.separator}/>
-    </View>
-      </>
+<></>
   );
 }
 
