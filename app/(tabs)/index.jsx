@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
 import { View, Text } from 'react-native';
-export default function TabOneScreen() {
-   console.log("mounted");
+import LandingScreen from '../components/landing';
+export default function MainScreen() {
   return (
-<></>
+         <LandingScreen />
   );
 }
 
