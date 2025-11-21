@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
        color:"#555",
        fontSize:16,
        marginBottom:20,
+       fontFamily:"Poppins_400Regular",
 
   },
   image: {
@@ -95,15 +96,18 @@ const styles = StyleSheet.create({
 buttonTextBottom: {
   color: "#E80000",              // red text matching border
   fontSize: 16,
+   fontFamily:"Poppins_400Regular"
 },
 
 highlight:{
     color:"#E80000",
+     fontFamily:"Poppins_400Regular"
 },
 
   buttonText: {
     color: "#fff",
     fontSize: 16,
+     fontFamily:"Poppins_400Regular"
   },
   footerContainer: {
     position: "absolute",

@@ -39,11 +39,10 @@ export default function LandingScreen({ navigation }) {
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f9f9f9", // soft background
+    backgroundColor: "#f9f9f9",
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 20,
@@ -55,10 +54,10 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 32,
-    fontWeight: "700",
     color: "#242424",
     marginBottom: 30,
     letterSpacing: 1,
+    fontFamily: "Poppins_700Bold",
   },
   button: {
     backgroundColor: "#242424",
@@ -71,13 +70,13 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
-    elevation: 5, // Android shadow
+    elevation: 5,
     marginBottom: 20,
   },
   buttonText: {
     color: "#fff",
     fontSize: 18,
-    fontWeight: "600",
+    fontFamily: "Poppins_600SemiBold",
   },
   footerContainer: {
     position: "absolute",
@@ -88,5 +87,6 @@ const styles = StyleSheet.create({
   footerText: {
     fontSize: 13,
     color: "#8e8e8e",
+    fontFamily: "Poppins_400Regular",
   },
 });
