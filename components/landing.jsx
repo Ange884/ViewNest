@@ -1,21 +1,24 @@
 import React from "react";
-import { View, Image, Text, StyleSheet,TouchableOpacity } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-export default function LandingScreen({navigation}) {
+export default function LandingScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Image source={require('../assets/images/landing.png')} />
-      <Text style={styles.text}>ViewNest</Text>
+      <Image source={require('../assets/images/landing.png')} style={styles.image} />
+
+      <Text style={styles.title}>ViewNest</Text>
+
+      <TouchableOpacity
+        onPress={() => navigation.navigate("welcome")}
+        style={styles.button}
+        activeOpacity={0.8}
+      >
+        <Text style={styles.buttonText}>Get Started</Text>
+      </TouchableOpacity>
 
       {/* Footer */}
       <View style={styles.footerContainer}>
         <Text style={styles.footerText}>Created by Nziza Ange</Text>
-        <TouchableOpacity onPress={() =>navigation.navigate("welcome")} style={styles.button}>
-          <Text style={[styles.buttonText, { marginTop: 5 }]}>
-            Get Started
-          </Text>
-        </TouchableOpacity>
       </View>
     </View>
   );
@@ -24,38 +27,50 @@ export default function LandingScreen({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#f9f9f9", // soft background
     alignItems: "center",
     justifyContent: "center",
-    position: "relative", // allows absolute positioning of footer
+    paddingHorizontal: 20,
+    position: "relative",
   },
-  text: {
-    fontSize: 30,
-    fontWeight: "bold",
-    color: "#000",
+  image: {
+    resizeMode: "contain",
+    marginBottom: 2,
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: "700",
+    color: "#242424",
+    marginBottom: 30,
+    letterSpacing: 1,
+  },
+  button: {
+    backgroundColor: "#242424",
+    paddingVertical: 14,
+    paddingHorizontal: 40,
+    borderRadius: 25,
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 5, // Android shadow
+    marginBottom: 20,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "600",
   },
   footerContainer: {
     position: "absolute",
-    bottom: 20, // distance from bottom
+    bottom: 15,
     width: "100%",
     alignItems: "center",
   },
   footerText: {
     fontSize: 13,
-    color: "#616060ff",
+    color: "#8e8e8e",
   },
-   button: {
-    marginTop: 10,
-    backgroundColor: "#242424",
-    paddingVertical: 10, // vertical padding
-    paddingHorizontal: 25, // horizontal padding
-    borderRadius: 20,
-    alignItems: "center", // centers text horizontally
-    justifyContent: "center", // centers text vertically
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 16,
-    textAlign: "center", // just in case
-  },
-
 });
