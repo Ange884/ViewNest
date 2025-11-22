@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
 import { View, Text } from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import LandingScreen from '../../components/landing.jsx';
-import WelcomeScreen from '../../components/welcome.jsx';
-import RegisterScreen from '../../components/Register.jsx';
+import LandingScreen from '../components/landing.jsx';
+import WelcomeScreen from '../components/welcome.jsx';
+import RegisterScreen from '../components/Register.jsx';
 const Stack = createNativeStackNavigator();
 
 export default function MainScreen() {
