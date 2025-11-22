@@ -11,7 +11,7 @@ export default function WelcomeScreen({navigation}) {
       <Text style={styles.Text}>Welcome <span style={styles.highlight}>User</span></Text>
 
       <TouchableOpacity
-        onPress={() => navigation.navigate("login")}
+        onPress={() => navigation.navigate("Register")}
         style={styles.button}
         activeOpacity={0.8}
       >
@@ -19,7 +19,7 @@ export default function WelcomeScreen({navigation}) {
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => navigation.navigate("welcome")}
+        onPress={() => navigation.navigate("Login")}
           style={styles.buttonBottom}
           activeOpacity={0.8}
          >

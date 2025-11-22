@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LandingScreen from '../../components/landing.jsx';
 import WelcomeScreen from '../../components/welcome.jsx';
-import LoginScreen from '../../components/login.jsx';
+import RegisterScreen from '../../components/Register.jsx';
 const Stack = createNativeStackNavigator();
 
 export default function MainScreen() {
@@ -13,6 +13,7 @@ export default function MainScreen() {
            screenOptions={{headerShown:false,}}>
             <Stack.Screen name="landing" component={LandingScreen} />
             <Stack.Screen name="welcome" component={WelcomeScreen} />
+            <Stack.Screen name="Register" component={RegisterScreen} />
           </Stack.Navigator>
     
   );
