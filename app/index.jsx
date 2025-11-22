@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LandingScreen from '../components/landing.jsx';
 import WelcomeScreen from '../components/welcome.jsx';
 import RegisterScreen from '../components/Register.jsx';
+import confirmOTPScreen from '../components/confirmOTP.jsx';
 const Stack = createNativeStackNavigator();
 
 export default function MainScreen() {
@@ -14,6 +15,7 @@ export default function MainScreen() {
             <Stack.Screen name="landing" component={LandingScreen} />
             <Stack.Screen name="welcome" component={WelcomeScreen} />
             <Stack.Screen name="Register" component={RegisterScreen} />
+            <Stack.Screen name="confirmOTP" component={confirmOTPScreen} />
           </Stack.Navigator>
     
   );

@@ -40,7 +40,7 @@ export default function RegisterScreen({ navigation }) {
         style={styles.button}
         activeOpacity={0.8}
       >
-        <Text style={styles.buttonText}>Sign Up</Text>
+        <Text style={styles.buttonText} onPress={()=>navigation.navigate("confirmOTP")}>Sign Up</Text>
       </TouchableOpacity>
 
       <Text style={styles.subtitle}>
