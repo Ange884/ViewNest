@@ -35,7 +35,7 @@ export default function VerifyOTPScreen({ navigation }) {
         placeholderTextColor="#1b1b1bff"
       />
 
-      <TouchableOpacity style={styles.button} activeOpacity={0.8} onPress={()=>navigation.navigate("verifyOTP")}>
+      <TouchableOpacity style={styles.button} activeOpacity={0.8} onPress={()=>navigation.navigate("Register2")}>
         <Text style={styles.buttonText}>verify OTP</Text>
       </TouchableOpacity>
 

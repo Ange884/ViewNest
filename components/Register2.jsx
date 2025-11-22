@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import { View, Text, StyleSheet,TextInput} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-export default function Register3(){
+export default function Register2Screen(){
     return(
         <View style={styles.container}>
             <Image source={require('../assets/images/verifyOTP.png')} style={styles.image} />

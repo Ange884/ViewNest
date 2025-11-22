@@ -6,6 +6,7 @@ import WelcomeScreen from '../components/welcome.jsx';
 import RegisterScreen from '../components/Register.jsx';
 import confirmOTPScreen from '../components/confirmOTP.jsx';
 import VerifyOTPScreen from '../components/verifyOTP.jsx';
+import Register2Screen from '../components/Register2.jsx';
 const Stack = createNativeStackNavigator();
 
 export default function MainScreen() {
