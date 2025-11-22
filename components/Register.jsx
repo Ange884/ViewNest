@@ -1,13 +1,14 @@
 import React from "react";
-import { View, Image, Text, StyleSheet, TouchableOpacity, TextInput } from "react-native";
-import { useFonts,
+import { View, Image, Text, StyleSheet, TouchableOpacity, TextInput, ActivityIndicator } from "react-native";
+import {
+  useFonts,
   Poppins_400Regular,
   Poppins_600SemiBold,
   Poppins_700Bold
 } from "@expo-google-fonts/poppins";
-import { ActivityIndicator} from "react-native";
-export default function RegisterScreen({navigation}) {
-    const [fontsLoaded] = useFonts({
+
+export default function RegisterScreen({ navigation }) {
+  const [fontsLoaded] = useFonts({
     Poppins_400Regular,
     Poppins_600SemiBold,
     Poppins_700Bold,
@@ -16,102 +17,107 @@ export default function RegisterScreen({navigation}) {
   if (!fontsLoaded) {
     return <ActivityIndicator size="large" style={{ flex: 1 }} />;
   }
-  return (
-    <View style={styles.container}>
-        <View style={styles.footerContainer}>
-     
+
+ return (
+  <View style={styles.container}>
+    <View style={styles.innerContainer}>
+      
       <Image source={require('../assets/images/people.png')} style={styles.image} />
 
-      <Text style={styles.Text}>Let's get you <span style={styles.highlight}>Registered</span></Text>
+      <Text style={styles.title}>
+        Let's get you <Text style={styles.highlight}>Registered</Text>
+      </Text>
 
-      <TextInput style={styles.TextInput} placeholder="Username" />
-      <TextInput style={styles.TextInput} placeholder="Email" />
-      <TextInput style={styles.TextInput} placeholder="Password" secureTextEntry={true} />
+      <Text style={styles.subtitle}> Kindly fill all input fields</Text>
+
+      <TextInput style={styles.input} placeholder="Fullname" placeholderTextColor="#999" />
+      <TextInput style={styles.input} placeholder="Email" placeholderTextColor="#999" />
+      <TextInput style={styles.input} placeholder="Phone" placeholderTextColor="#999" />
+      <TextInput style={styles.input} placeholder="Password" secureTextEntry placeholderTextColor="#999" />
 
       <TouchableOpacity
         onPress={() => navigation.navigate("login")}
-          style={styles.buttonBottom}
-          activeOpacity={0.8}
-         >
-         <Text style={styles.buttonTextBottom}>Sign Up</Text>
-        </TouchableOpacity>
-</View>
-</View>
-  );
+        style={styles.button}
+        activeOpacity={0.8}
+      >
+        <Text style={styles.buttonText}>Sign Up</Text>
+      </TouchableOpacity>
+
+      <Text style={styles.subtitle}>
+        OOps! I'm a member,  
+        <Text 
+          onPress={() => navigation.navigate("login")} 
+          style={{ color: PRIMARY_RED, fontSize: 13 }}
+        >
+          {" "}Login
+        </Text>
+      </Text>
+
+    </View>
+  </View>
+);
 }
+const PRIMARY_RED = "#E80000";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f9f9f9", // soft background
+    backgroundColor: "#fff", 
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 20,
-    position: "relative",
+    bottom: 3,
   },
-  Text:{
-       color:"#555",
-       fontSize:16,
-       marginBottom:20,
-       fontFamily:"Poppins_400Regular",
+  innerContainer: {
+  width: "90%",
+  alignItems: "center",
+  position: "absolute",
+  bottom: 0, // move up/down as needed
+},
 
-  },
   image: {
+    width: 160,
+    height: 160,
     resizeMode: "contain",
-    marginBottom: 2,
+    marginBottom: 10,
   },
   title: {
-    fontSize: 32,
-    fontWeight: "700",
-    color: "#242424",
+    fontSize: 22,
+    color: "#333",
+    marginBottom: 0,
+    fontFamily: "Poppins_600SemiBold",
+  },
+  subtitle: {
+    fontSize: 13,
+    color: "#585454ff",
+    marginBottom: 20,
+    fontFamily: "Poppins_400Regular",
   },
   highlight: {
-    color: "#E80000",
-    fontWeight: "600",
+    color: PRIMARY_RED,
+    fontFamily: "Poppins_700Bold",
+  },
+  input: {
+    width: "100%",
+    height: 50,
+    borderColor: "#b1b1b1ff",
+    borderWidth: 1,
+    borderRadius: 25,
+    paddingHorizontal: 15,
+    marginBottom: 12,
+    fontFamily: "Poppins_400Regular",
   },
   button: {
-    backgroundColor: "#4A90E2",
+    backgroundColor:"#242424",
     paddingVertical: 12,
-    paddingHorizontal: 30,
     borderRadius: 25,
-    marginBottom: 15,
-    width: '90%',
-    alignItems: 'center',
+    width: "100%",
+    alignItems: "center",
+    marginTop: 10,
   },
   buttonText: {
     color: "#fff",
     fontSize: 16,
     fontFamily: "Poppins_600SemiBold",
-  },
-  buttonBottom: {
-    backgroundColor: "#fff",
-    borderWidth: 1,
-    borderColor: "#4A90E2",
-    paddingVertical: 12,
-    paddingHorizontal: 30,
-    borderRadius: 25,
-    width: '90%',
-    alignItems: 'center',
-  },
-  buttonTextBottom: {
-    color: "#4A90E2",
-    fontSize: 16,
-    fontFamily: "Poppins_600SemiBold",
-  },
-  TextInput: {
-    width: '90%',
-    height: 50,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 25,
-    paddingHorizontal: 15,
-    marginBottom: 15,
-    fontFamily: "Poppins_400Regular",
-  },
-  footerContainer: {
-    position: "absolute",
-    bottom: 15,
-    width: "100%",
-    alignItems: "center",
   },
 });
