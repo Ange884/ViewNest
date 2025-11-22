@@ -19,6 +19,7 @@ export default function MainScreen() {
             <Stack.Screen name="Register" component={RegisterScreen} />
             <Stack.Screen name="confirmOTP" component={confirmOTPScreen} />
             <Stack.Screen name="verifyOTP" component={VerifyOTPScreen} />
+            <Stack.Screen name="Register2" component={Register2Screen} />
           </Stack.Navigator>
     
   );
