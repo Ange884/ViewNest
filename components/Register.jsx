@@ -36,11 +36,11 @@ export default function RegisterScreen({ navigation }) {
       <TextInput style={styles.input} placeholder="Password" secureTextEntry placeholderTextColor="#999" />
 
       <TouchableOpacity
-        onPress={() => navigation.navigate("login")}
+        onPress={()=>navigation.navigate("confirmOTP")}
         style={styles.button}
         activeOpacity={0.8}
       >
-        <Text style={styles.buttonText} onPress={()=>navigation.navigate("confirmOTP")}>Sign Up</Text>
+        <Text style={styles.buttonText} >Sign Up</Text>
       </TouchableOpacity>
 
       <Text style={styles.subtitle}>

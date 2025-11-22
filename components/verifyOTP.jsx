@@ -29,14 +29,14 @@ export default function VerifyOTPScreen({ navigation }) {
 
       <TextInput
         style={styles.input}
-        placeholder="x x x - x x x"
+        placeholder="4 5 6 - 7 8 9"
         keyboardType="numeric"
         maxLength={6}
-        placeholderTextColor="#999"
+        placeholderTextColor="#1b1b1bff"
       />
 
       <TouchableOpacity style={styles.button} activeOpacity={0.8} onPress={()=>navigation.navigate("verifyOTP")}>
-        <Text style={styles.buttonText}>Enter OTP</Text>
+        <Text style={styles.buttonText}>verify OTP</Text>
       </TouchableOpacity>
 
       <Text style={styles.resendText}>
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   button: {
-    backgroundColor: "#d14e4eff",
+    backgroundColor: PRIMARY_RED,
     paddingVertical: 14,
     borderRadius: 25,
     borderColor:"#000",
