@@ -22,7 +22,7 @@ export default function LandingScreen({ navigation }) {
     <View style={styles.container}>
       <Image source={require('../assets/images/landing.png')} style={styles.image} />
 
-      <Text style={[styles.title, {fontFamily:"poppins_700Bold"}]}>ViewNest</Text>
+      <Text style={[styles.title]}>ViewNest</Text>
 
       <TouchableOpacity
         onPress={() => navigation.navigate("welcome")}
@@ -55,8 +55,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     color: "#242424",
-    marginBottom: 30,
-    letterSpacing: 1,
+    marginBottom: 10,
     fontFamily: "Poppins_700Bold",
   },
   button: {
