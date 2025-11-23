@@ -36,6 +36,57 @@ export default function Register2Screen() {
           style={styles.rightIcon}
         />
       </View>
+      <View style={styles.inputContainer}>
+        <Image 
+          source={require('../assets/images/house-building 3.png')} 
+          style={styles.leftIcon} 
+        />
+
+        <TextInput
+          style={styles.input}
+          placeholder="Type of Building"
+          placeholderTextColor="#999"
+        />
+
+        <Image
+          source={require('../assets/images/Vector 11.png')}
+          style={styles.rightIcon}
+        />
+      </View>
+      <View style={styles.inputContainer}>
+        <Image 
+          source={require('../assets/images/house-building 3.png')} 
+          style={styles.leftIcon} 
+        />
+
+        <TextInput
+          style={styles.input}
+          placeholder="Type of Building"
+          placeholderTextColor="#999"
+        />
+
+        <Image
+          source={require('../assets/images/Vector 11.png')}
+          style={styles.rightIcon}
+        />
+      </View>
+      <View style={styles.inputContainer}>
+        <Image 
+          source={require('../assets/images/house-building 3.png')} 
+          style={styles.leftIcon} 
+        />
+
+        <TextInput
+          style={styles.input}
+          placeholder="Type of Building"
+          placeholderTextColor="#999"
+        />
+
+        <Image
+          source={require('../assets/images/Vector 11.png')}
+          style={styles.rightIcon}
+        />
+      </View>
 
     </View>
   );
