@@ -38,7 +38,7 @@ export default function Register2Screen() {
       </View>
       <View style={styles.inputContainer}>
         <Image 
-          source={require('../assets/images/house-building 3.png')} 
+          source={require('../assets/images/component 7.png')} 
           style={styles.leftIcon} 
         />
 
@@ -55,7 +55,7 @@ export default function Register2Screen() {
       </View>
       <View style={styles.inputContainer}>
         <Image 
-          source={require('../assets/images/house-building 3.png')} 
+          source={require('../assets/images/component 8.png')} 
           style={styles.leftIcon} 
         />
 
@@ -72,7 +72,7 @@ export default function Register2Screen() {
       </View>
       <View style={styles.inputContainer}>
         <Image 
-          source={require('../assets/images/house-building 3.png')} 
+          source={require('../assets/images/component 9.png')} 
           style={styles.leftIcon} 
         />
 
