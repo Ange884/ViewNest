@@ -88,6 +88,14 @@ export default function Register2Screen() {
         />
       </View>
 
+       <TouchableOpacity
+              onPress={()=>navigation.navigate("")}
+              style={styles.button}
+              activeOpacity={0.8}
+            >
+              <Text style={styles.buttonText} >Submit</Text>
+            </TouchableOpacity>
+
     </View>
   );
 }
