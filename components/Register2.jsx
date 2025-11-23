@@ -93,7 +93,7 @@ export default function Register2Screen() {
               style={styles.button}
               activeOpacity={0.8}
             >
-              <Text style={styles.buttonText} >Submit</Text>
+              <Text style={styles.buttonText}>Submit</Text>
             </TouchableOpacity>
 
     </View>
