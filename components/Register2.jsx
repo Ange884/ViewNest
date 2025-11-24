@@ -36,6 +36,7 @@ function DropDownInput({ icon, placeholder }) {
       {/* Dropdown menu */}
       {open && (
         <View style={styles.dropdown}>
+          <Text style={styles.selectOption}>make your  <Text style={styles.highlight}>choice </Text></Text>
           <Text style={styles.dropdownItem}>Option 1</Text>
           <Text style={styles.dropdownItem}>Option 2</Text>
           <Text style={styles.dropdownItem}>Option 3</Text>
@@ -117,6 +118,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 5,
     fontFamily: "poppins",
+  },
+  selectOption:{
+     fontSize: 13,
+     color: "#000",
+     marginBottom: 8,
+     fontFamily: "poppins",
+     fontWeight:"600",
+     justifyContent:"center",
+     alignItems:"center",
   },
 
   highlight: {
