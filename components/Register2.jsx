@@ -1,8 +1,9 @@
-import React from 'react';
+import React , {useState} from 'react';
 import { View, Text, StyleSheet, TextInput, Image,TouchableOpacity } from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
 
 export default function Register2Screen() {
+  const [open,setOpen]=useState(false);
   return (
     <View style={styles.container}>
       
@@ -16,7 +17,7 @@ export default function Register2Screen() {
       </Text>
 
       <Text style={styles.subtitle}>
-        What are you looking for exactly? Let’s help you!
+        What are you looking for exactly? Let's help you!
       </Text>
 
       {/* Input with left + right icons */}
@@ -76,9 +77,20 @@ export default function Register2Screen() {
           placeholder="Type of Building"
           placeholderTextColor="#3a3a3aff"
         />
+        <TouchableOpacity
+          style={styles.header}
+          onPress={()=>setOpen(!open)}
+        >
          
-         <Ionicons name='chevron-down' size={22} color='#3a3a3aff' style={styles.rightIcon} />
-
+         <Ionicons name={open? "chevron-up" : "chevron-down"} size={22} color='#3a3a3aff' style={styles.rightIcon} />
+         </TouchableOpacity>
+         {open &&(
+          <View style = {styles.dropdown}>
+            <Text style={styles.dropdownItem}>Option 1</Text>
+            <Text style={styles.dropdownItem}>Option 2</Text>
+            <Text style={styles.dropdownItem}>Option 3</Text> 
+            </View>
+         )}
         
       </View>
 
