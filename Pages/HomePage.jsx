@@ -14,6 +14,14 @@ export default function HomePageScreen(){
         paddingHorizontal:10,
         paddingVertical:30,
       }}
-      ></ScrollView>
+      >
+
+        <View style={Styles.container}>
+            <View style={styles.headerPart}>
+                <Image source={require("../assets/images/Ellipse 12.png")}/>
+                
+            </View>
+        </View>
+      </ScrollView>
     );
 }
