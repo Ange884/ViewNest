@@ -19,7 +19,7 @@ function DropDownInput({ icon, placeholder }) {
         <TextInput
           style={styles.input}
           placeholder={placeholder}
-          placeholderTextColor="#3a3a3aff"
+          placeholderTextColor="#000"
         />
 
         {/* Chevron button */}
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
 
   subtitle: {
     fontSize: 14,
-    color: "#666",
+    color: "#000",
     textAlign: "center",
     marginBottom: 25,
     paddingHorizontal: 10,
