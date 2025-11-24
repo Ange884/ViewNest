@@ -134,12 +134,14 @@ const styles = StyleSheet.create({
 
   categoryRow: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    gap:40,
+    alignItems:"center",
+    justifyContent:"center",
   },
 
   categoryIcon: {
-    width: 60,
-    height: 60,
+    width:50,
+    height:50,
     borderRadius: 12,
     backgroundColor: "#f6f6f6",
   },
