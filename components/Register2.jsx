@@ -36,10 +36,10 @@ function DropDownInput({ icon, placeholder }) {
       {/* Dropdown menu */}
       {open && (
         <View style={styles.dropdown}>
-          <Text style={styles.selectOption}>make your  <Text style={styles.highlight}>choice </Text></Text>
-          <Text style={styles.dropdownItem}>Option 1</Text>
-          <Text style={styles.dropdownItem}>Option 2</Text>
-          <Text style={styles.dropdownItem}>Option 3</Text>
+          <Text style={styles.selectOption}>make your  <Text style={styles.highlight}>Choice </Text></Text>
+          <Text style={styles.dropdownItem}><Image source={require("../assets/images/Frame 555.png")} /></Text>
+          <Text style={styles.dropdownItem}><Image source={require("../assets/images/Frame 556.png")} /></Text>
+          <Text style={styles.dropdownItem}><Image source={require("../assets/images/Frame 557.png")} /></Text>
         </View>
       )}
     </View>
