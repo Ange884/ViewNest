@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, Image } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Image,TouchableOpacity } from 'react-native';
+import {Ionicons} from '@expo/vector-icons';
 
 export default function Register2Screen() {
   return (
@@ -28,7 +29,7 @@ export default function Register2Screen() {
         <TextInput
           style={styles.input}
           placeholder="Type of Building"
-          placeholderTextColor="#999"
+          placeholderTextColor="#3a3a3aff"
         />
 
         <Image
@@ -45,7 +46,7 @@ export default function Register2Screen() {
         <TextInput
           style={styles.input}
           placeholder="Type of Building"
-          placeholderTextColor="#999"
+          placeholderTextColor="#3a3a3aff"
         />
 
         <Image
@@ -62,7 +63,7 @@ export default function Register2Screen() {
         <TextInput
           style={styles.input}
           placeholder="Type of Building"
-          placeholderTextColor="#999"
+          placeholderTextColor="#3a3a3aff"
         />
 
         <Image
@@ -79,13 +80,12 @@ export default function Register2Screen() {
         <TextInput
           style={styles.input}
           placeholder="Type of Building"
-          placeholderTextColor="#999"
+          placeholderTextColor="#3a3a3aff"
         />
+         
+         <Ionicons name='arrow-down' size={16} color='#3a3a3aff' style={styles.rightIcon} />
 
-        <Image
-          source={require('../assets/images/Vector 11.png')}
-          style={styles.rightIcon}
-        />
+        
       </View>
 
        <TouchableOpacity
@@ -143,10 +143,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: "#5e5d5dff",
     borderRadius: 12,
     paddingHorizontal: 12,
     height: 55,
+    marginBottom: 15,
   },
 
   leftIcon: {
@@ -158,6 +159,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     fontSize: 15,
+    fontFamily:"poppins",
   },
 
   rightIcon: {
