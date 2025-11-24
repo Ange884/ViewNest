@@ -1,7 +1,8 @@
+import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { View, Image, Text, StyleSheet, TouchableOpacity, TextInput, ScrollView } from "react-native";
+import { View, Image, Text, StyleSheet, TextInput, ScrollView } from "react-native";
 
-export default function HomePageScreen({navigation}) {
+export default function HomePageScreen({ navigation }) {
   return (
     <ScrollView
       style={{ flex: 1, backgroundColor: "#fff" }}
@@ -14,30 +15,25 @@ export default function HomePageScreen({navigation}) {
     >
       <View style={styles.container}>
 
-        {/* TOP HEADER */}
+        {/* ---------- HEADER ---------- */}
         <View style={styles.headerPart}>
           <Image
             source={require("../assets/images/Ellipse 12.png")}
             style={styles.profilePic}
           />
 
-          <Text style={styles.welcomeText}>Welcome back, Nziza 👋</Text>
-
           {/* SEARCH BAR */}
           <View style={styles.searchBar}>
-            <Image
-              source={require("../assets/images/Vector.png")}
-              style={styles.searchIcon}
-            />
+            <Ionicons name="search" size={22} color="#666" />
             <TextInput
               placeholder="Search here..."
-              placeholderTextColor="#777"
+              placeholderTextColor="#888"
               style={styles.searchInput}
             />
           </View>
         </View>
 
-        {/* CATEGORIES SECTION */}
+        {/* ---------- CATEGORIES ---------- */}
         <View style={styles.categorySection}>
           <Text style={styles.categories}>Categories</Text>
 
@@ -76,47 +72,34 @@ const styles = StyleSheet.create({
 
   /* HEADER PART */
   headerPart: {
-    width: "100%",
+    flexDirection: "row",
     alignItems: "center",
-    marginBottom: 30,
+    gap: 15,
+    marginBottom: 20,
   },
 
   profilePic: {
-    width: 70,
-    height: 70,
-    borderRadius: 35,
-    marginBottom: 10,
-  },
-
-  welcomeText: {
-    fontSize: 20,
-    fontWeight: "600",
-    color: "#222",
-    marginBottom: 20,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
   },
 
   /* SEARCH BAR */
   searchBar: {
-    width: "100%",
+    flex: 1,
     height: 50,
-    backgroundColor: "#f1f1f1",
+    backgroundColor: "#f0f0f0",
     borderRadius: 15,
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: 15,
   },
 
-  searchIcon: {
-    width: 20,
-    height: 20,
-    marginRight: 10,
-    tintColor: "#555",
-  },
-
   searchInput: {
     flex: 1,
-    fontSize: 15,
+    fontSize: 16,
     color: "#000",
+    marginLeft: 10,
   },
 
   /* CATEGORY SECTION */
@@ -126,7 +109,7 @@ const styles = StyleSheet.create({
   },
 
   categories: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: "600",
     color: "#222",
     marginBottom: 15,
@@ -134,15 +117,14 @@ const styles = StyleSheet.create({
 
   categoryRow: {
     flexDirection: "row",
-    gap:40,
-    alignItems:"center",
-    justifyContent:"center",
+    justifyContent: "space-between",
+    paddingHorizontal: 10,
   },
 
   categoryIcon: {
-    width:50,
-    height:50,
-    borderRadius: 12,
+    width: 60,
+    height: 60,
+    borderRadius: 15,
     backgroundColor: "#f6f6f6",
   },
 });
