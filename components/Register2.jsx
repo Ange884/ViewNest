@@ -1,15 +1,59 @@
-import React , {useState} from 'react';
-import { View, Text, StyleSheet, TextInput, Image,TouchableOpacity } from 'react-native';
-import {Ionicons} from '@expo/vector-icons';
+import React, { useState } from "react";
+import { View, Text, StyleSheet, TextInput, Image, TouchableOpacity } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
-export default function Register2Screen() {
-  const [open,setOpen]=useState(false);
+const PRIMARY_RED = "#E80000";
+
+/* ----------------------------------------------
+   REUSABLE DROPDOWN INPUT COMPONENT
+------------------------------------------------*/
+function DropDownInput({ icon, placeholder }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <View style={{ width: "100%" }}>
+      {/* Input Row */}
+      <View style={styles.inputContainer}>
+        <Image source={icon} style={styles.leftIcon} />
+
+        <TextInput
+          style={styles.input}
+          placeholder={placeholder}
+          placeholderTextColor="#3a3a3aff"
+        />
+
+        {/* Chevron button */}
+        <TouchableOpacity onPress={() => setOpen(!open)}>
+          <Ionicons
+            name={open ? "chevron-up" : "chevron-down"}
+            size={22}
+            color="#3a3a3aff"
+            style={styles.rightIcon}
+          />
+        </TouchableOpacity>
+      </View>
+
+      {/* Dropdown menu */}
+      {open && (
+        <View style={styles.dropdown}>
+          <Text style={styles.dropdownItem}>Option 1</Text>
+          <Text style={styles.dropdownItem}>Option 2</Text>
+          <Text style={styles.dropdownItem}>Option 3</Text>
+        </View>
+      )}
+    </View>
+  );
+}
+
+/* ----------------------------------------------
+   MAIN SCREEN COMPONENT
+------------------------------------------------*/
+export default function Register2Screen({ navigation }) {
   return (
     <View style={styles.container}>
-      
       <Image 
-        source={require('../assets/images/Group 1.png')} 
-        style={styles.image} 
+        source={require("../assets/images/Group 1.png")}
+        style={styles.image}
       />
 
       <Text style={styles.title}>
@@ -20,94 +64,37 @@ export default function Register2Screen() {
         What are you looking for exactly? Let's help you!
       </Text>
 
-      {/* Input with left + right icons */}
-      <View style={styles.inputContainer}>
-        <Image 
-          source={require('../assets/images/house-building 3.png')} 
-          style={styles.leftIcon} 
-        />
+      {/* Reusable dropdown inputs */}
+      <DropDownInput 
+        icon={require("../assets/images/house-building 3.png")}
+        placeholder="Type of Building"
+      />
 
-        <TextInput
-          style={styles.input}
-          placeholder="Type of Building"
-          placeholderTextColor="#3a3a3aff"
-        />
+      <DropDownInput 
+        icon={require("../assets/images/Component 7.png")}
+        placeholder="Construction Material"
+      />
 
-        <Ionicons name='chevron-down' size={22} color='#3a3a3aff' style={styles.rightIcon} />
+      <DropDownInput 
+        icon={require("../assets/images/Component 8.png")}
+        placeholder="Preferred Size"
+      />
 
-      </View>
-      <View style={styles.inputContainer}>
-        <Image 
-          source={require('../assets/images/Component 7.png')} 
-          style={styles.leftIcon} 
-        />
+      <DropDownInput 
+        icon={require("../assets/images/Component 9.png")}
+        placeholder="Additional Services"
+      />
 
-        <TextInput
-          style={styles.input}
-          placeholder="Type of Building"
-          placeholderTextColor="#3a3a3aff"
-        />
-
-        <Ionicons name='chevron-down' size={22} color='#3a3a3aff' style={styles.rightIcon} />
-
-      </View>
-      <View style={styles.inputContainer}>
-        <Image 
-          source={require('../assets/images/Component 8.png')} 
-          style={styles.leftIcon} 
-        />
-
-        <TextInput
-          style={styles.input}
-          placeholder="Type of Building"
-          placeholderTextColor="#3a3a3aff"
-        />
-
-        <Ionicons name='chevron-down' size={22} color='#3a3a3aff' style={styles.rightIcon} />
-
-      </View>
-      <View style={styles.inputContainer}>
-        <Image 
-          source={require('../assets/images/Component 9.png')} 
-          style={styles.leftIcon} 
-        />
-
-        <TextInput
-          style={styles.input}
-          placeholder="Type of Building"
-          placeholderTextColor="#3a3a3aff"
-        />
-        <TouchableOpacity
-          style={styles.header}
-          onPress={()=>setOpen(!open)}
-        >
-         
-         <Ionicons name={open? "chevron-up" : "chevron-down"} size={22} color='#3a3a3aff' style={styles.rightIcon} />
-         </TouchableOpacity>
-         {open &&(
-          <View style = {styles.dropdown}>
-            <Text style={styles.dropdownItem}>Option 1</Text>
-            <Text style={styles.dropdownItem}>Option 2</Text>
-            <Text style={styles.dropdownItem}>Option 3</Text> 
-            </View>
-         )}
-        
-      </View>
-
-       <TouchableOpacity
-              onPress={()=>navigation.navigate("")}
-              style={styles.button}
-              activeOpacity={0.8}
-            >
-              <Text style={styles.buttonText}>Submit</Text>
-            </TouchableOpacity>
-
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Submit</Text>
+      </TouchableOpacity>
     </View>
   );
 }
 
-const PRIMARY_RED = "#E80000";
-
+/* ----------------------------------------------
+   STYLES
+------------------------------------------------*/
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -129,12 +116,12 @@ const styles = StyleSheet.create({
     color: "#333",
     textAlign: "center",
     marginBottom: 5,
-     fontFamily:"poppins",
+    fontFamily: "poppins",
   },
 
   highlight: {
     color: PRIMARY_RED,
-     fontFamily:"poppins",
+    fontFamily: "poppins",
   },
 
   subtitle: {
@@ -143,7 +130,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 25,
     paddingHorizontal: 10,
-     fontFamily:"poppins",
+    fontFamily: "poppins",
   },
 
   inputContainer: {
@@ -167,22 +154,39 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     fontSize: 15,
-    fontFamily:"poppins",
+    fontFamily: "poppins",
   },
 
   rightIcon: {
-    width: 16,
-    height: 16,
     marginLeft: 10,
   },
-   button: {
-    backgroundColor:"#242424",
+
+  dropdown: {
+    backgroundColor: "#fafafa",
+    borderWidth: 1,
+    borderColor: "#d0d0d0",
+    borderRadius: 12,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    marginTop: -10,
+    marginBottom: 10,
+  },
+
+  dropdownItem: {
+    paddingVertical: 8,
+    fontSize: 15,
+    fontFamily: "poppins",
+  },
+
+  button: {
+    backgroundColor: "#242424",
     paddingVertical: 12,
     borderRadius: 25,
     width: "100%",
     alignItems: "center",
     marginTop: 10,
   },
+
   buttonText: {
     color: "#fff",
     fontSize: 16,
