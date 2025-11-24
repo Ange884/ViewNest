@@ -32,10 +32,8 @@ export default function Register2Screen() {
           placeholderTextColor="#3a3a3aff"
         />
 
-        <Image
-          source={require('../assets/images/Vector 11.png')}
-          style={styles.rightIcon}
-        />
+        <Ionicons name='chevron-down' size={22} color='#3a3a3aff' style={styles.rightIcon} />
+
       </View>
       <View style={styles.inputContainer}>
         <Image 
@@ -49,10 +47,8 @@ export default function Register2Screen() {
           placeholderTextColor="#3a3a3aff"
         />
 
-        <Image
-          source={require('../assets/images/Vector 11.png')}
-          style={styles.rightIcon}
-        />
+        <Ionicons name='chevron-down' size={22} color='#3a3a3aff' style={styles.rightIcon} />
+
       </View>
       <View style={styles.inputContainer}>
         <Image 
@@ -66,10 +62,8 @@ export default function Register2Screen() {
           placeholderTextColor="#3a3a3aff"
         />
 
-        <Image
-          source={require('../assets/images/Vector 11.png')}
-          style={styles.rightIcon}
-        />
+        <Ionicons name='chevron-down' size={22} color='#3a3a3aff' style={styles.rightIcon} />
+
       </View>
       <View style={styles.inputContainer}>
         <Image 
@@ -83,7 +77,7 @@ export default function Register2Screen() {
           placeholderTextColor="#3a3a3aff"
         />
          
-         <Ionicons name='arrow-down' size={16} color='#3a3a3aff' style={styles.rightIcon} />
+         <Ionicons name='chevron-down' size={22} color='#3a3a3aff' style={styles.rightIcon} />
 
         
       </View>
@@ -112,10 +106,9 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 140,
+    width: 180,
     height: 140,
     marginBottom: 20,
-    resizeMode: "contain",
   },
 
   title: {
@@ -124,10 +117,12 @@ const styles = StyleSheet.create({
     color: "#333",
     textAlign: "center",
     marginBottom: 5,
+     fontFamily:"poppins",
   },
 
   highlight: {
     color: PRIMARY_RED,
+     fontFamily:"poppins",
   },
 
   subtitle: {
@@ -136,6 +131,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 25,
     paddingHorizontal: 10,
+     fontFamily:"poppins",
   },
 
   inputContainer: {
@@ -144,7 +140,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderWidth: 1,
     borderColor: "#5e5d5dff",
-    borderRadius: 12,
+    borderRadius: 16,
     paddingHorizontal: 12,
     height: 55,
     marginBottom: 15,
@@ -166,5 +162,18 @@ const styles = StyleSheet.create({
     width: 16,
     height: 16,
     marginLeft: 10,
+  },
+   button: {
+    backgroundColor:"#242424",
+    paddingVertical: 12,
+    borderRadius: 25,
+    width: "100%",
+    alignItems: "center",
+    marginTop: 10,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontFamily: "Poppins_600SemiBold",
   },
 });
