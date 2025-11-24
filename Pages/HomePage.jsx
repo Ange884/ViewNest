@@ -151,13 +151,12 @@ const styles = StyleSheet.create({
 
 categoryItem: {
   alignItems: "center",
-  width: "23%", // 4 items per row (adjust if needed)
+  width: "25%", // 4 items per row (adjust if needed)
 },
 
 categoryIcon: {
-  width: 50,
-  height: 50,
-  resizeMode: "contain",
+  width: 60,
+  height: 60,
 },
 
 UnderText: {
