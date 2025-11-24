@@ -39,19 +39,19 @@ export default function HomePageScreen({ navigation }) {
 
           <View style={styles.categoryRow}>
             <Image
-              source={require("../assets/images/store2.png")}
+              source={require("../assets/images/all.png")}
               style={styles.categoryIcon}
             />
             <Image
-              source={require("../assets/images/store2.png")}
+              source={require("../assets/images/allStore.png")}
               style={styles.categoryIcon}
             />
             <Image
-              source={require("../assets/images/store2.png")}
+              source={require("../assets/images/apartment.png")}
               style={styles.categoryIcon}
             />
             <Image
-              source={require("../assets/images/store2.png")}
+              source={require("../assets/images/property.png")}
               style={styles.categoryIcon}
             />
           </View>
@@ -104,7 +104,6 @@ const styles = StyleSheet.create({
 
   /* CATEGORY SECTION */
   categorySection: {
-    width: "100%",
     marginTop: 20,
   },
 
@@ -117,14 +116,11 @@ const styles = StyleSheet.create({
 
   categoryRow: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    paddingHorizontal: 10,
+    justifyContent:"flex-start",
   },
 
   categoryIcon: {
-    width: 60,
-    height: 60,
-    borderRadius: 15,
-    backgroundColor: "#f6f6f6",
+    resizeMode:"contain",
+    borderRadius: 0,
   },
 });
