@@ -35,27 +35,42 @@ export default function HomePageScreen({ navigation }) {
 
         {/* ---------- CATEGORIES ---------- */}
         <View style={styles.categorySection}>
-          <Text style={styles.categories}>Categories</Text>
+  <Text style={styles.categories}>Categories</Text>
 
-          <View style={styles.categoryRow}>
-            <Image
-              source={require("../assets/images/all.png")}
-              style={styles.categoryIcon}
-            />
-            <Image
-              source={require("../assets/images/allStore.png")}
-              style={styles.categoryIcon}
-            />
-            <Image
-              source={require("../assets/images/apartment.png")}
-              style={styles.categoryIcon}
-            />
-            <Image
-              source={require("../assets/images/property.png")}
-              style={styles.categoryIcon}
-            />
-          </View>
-        </View>
+  <View style={styles.categoryRow}>
+    <View style={styles.categoryItem}>
+      <Image
+        source={require("../assets/images/all.png")}
+        style={styles.categoryIcon}
+      />
+      <Text style={styles.UnderText}>Home</Text>
+    </View>
+
+    <View style={styles.categoryItem}>
+      <Image
+        source={require("../assets/images/allStore.png")}
+        style={styles.categoryIcon}
+      />
+      <Text style={styles.UnderText}>Store</Text>
+    </View>
+
+    <View style={styles.categoryItem}>
+      <Image
+        source={require("../assets/images/apartment.png")}
+        style={styles.categoryIcon}
+      />
+      <Text style={styles.UnderText}>Apartment</Text>
+    </View>
+
+    <View style={styles.categoryItem}>
+      <Image
+        source={require("../assets/images/property.png")}
+        style={styles.categoryIcon}
+      />
+      <Text style={styles.UnderText}>Property</Text>
+    </View>
+  </View>
+</View>
 
       </View>
     </ScrollView>
@@ -115,12 +130,27 @@ const styles = StyleSheet.create({
   },
 
   categoryRow: {
-    flexDirection: "row",
-    justifyContent:"flex-start",
-  },
+  flexDirection: "row",
+  justifyContent: "space-between",
+  flexWrap: "wrap",
+  width: "100%",
+  marginTop: 15,
+},
 
-  categoryIcon: {
-    resizeMode:"contain",
-    borderRadius: 0,
-  },
+categoryItem: {
+  alignItems: "center",
+  width: "23%", // 4 items per row (adjust if needed)
+},
+
+categoryIcon: {
+  width: 50,
+  height: 50,
+  resizeMode: "contain",
+},
+
+UnderText: {
+  marginTop: 5,
+  fontSize: 12,
+},
+
 });
