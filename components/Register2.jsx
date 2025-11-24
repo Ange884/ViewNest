@@ -1,205 +1,224 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TextInput, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TextInput, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-const PRIMARY_RED = "#E80000";
+// 🔥 CONSTANT DATA FOR EACH DROPDOWN
+const DROPDOWN_DATA = [
+  {
+    id: 1,
+    placeholder: "Type of Building",
+    icon: require("../assets/images/house-building 3.png"),
+    options: [
+      require("../assets/images/Frame 555.png"),
+      require("../assets/images/Frame 556.png"),
+      require("../assets/images/Frame 557.png"),
+    ],
+  },
+  {
+    id: 2,
+    placeholder: "Construction Material",
+    icon: require("../assets/images/Component 7.png"),
+    options: [
+      require("../assets/images/Frame 556.png"),
+      require("../assets/images/Frame 555.png"),
+    ],
+  },
+  {
+    id: 3,
+    placeholder: "Preferred Size",
+    icon: require("../assets/images/Component 8.png"),
+    options: [
+      require("../assets/images/Frame 557.png"),
+      require("../assets/images/Frame 556.png"),
+    ],
+  },
+  {
+    id: 4,
+    placeholder: "Additional Services",
+    icon: require("../assets/images/Component 9.png"),
+    options: [
+      require("../assets/images/Frame 555.png"),
+      require("../assets/images/Frame 557.png"),
+    ],
+  },
+];
 
-/* ----------------------------------------------
-   REUSABLE DROPDOWN INPUT COMPONENT
-------------------------------------------------*/
-function DropDownInput({ icon, placeholder }) {
+// 🔽 Dropdown Component
+function DropDownInput({ icon, placeholder, options }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <View style={{ width: "100%" }}>
-      {/* Input Row */}
+    <View style={{ width: "100%", marginBottom: 20 }}>
+      {/* input row */}
       <View style={styles.inputContainer}>
         <Image source={icon} style={styles.leftIcon} />
 
         <TextInput
           style={styles.input}
           placeholder={placeholder}
-          placeholderTextColor="#000"
+          placeholderTextColor="#777"
         />
 
-        {/* Chevron button */}
         <TouchableOpacity onPress={() => setOpen(!open)}>
           <Ionicons
             name={open ? "chevron-up" : "chevron-down"}
             size={22}
-            color="#3a3a3aff"
-            style={styles.rightIcon}
+            color="#3a3a3a"
           />
         </TouchableOpacity>
       </View>
 
-      {/* Dropdown menu */}
+      {/* dropdown */}
       {open && (
         <View style={styles.dropdown}>
-          <Text style={styles.selectOption}>make your  <Text style={styles.highlight}>Choice </Text></Text>
-          <Text style={styles.dropdownItem}><Image source={require("../assets/images/Frame 555.png")} /></Text>
-          <Text style={styles.dropdownItem}><Image source={require("../assets/images/Frame 556.png")} /></Text>
-          <Text style={styles.dropdownItem}><Image source={require("../assets/images/Frame 557.png")} /></Text>
+          <Text style={styles.selectOption}>
+            Choose your <Text style={styles.highlight}>Option</Text>
+          </Text>
+
+          {options.map((imgSrc, index) => (
+            <TouchableOpacity key={index} style={styles.dropdownItem}>
+              <Image source={imgSrc} style={{ width: 130, height: 30 }} />
+            </TouchableOpacity>
+          ))}
         </View>
       )}
     </View>
   );
 }
 
-/* ----------------------------------------------
-   MAIN SCREEN COMPONENT
-------------------------------------------------*/
-export default function Register2Screen({ navigation }) {
+// 🔥 MAIN SCREEN
+export default function Register2Screen() {
   return (
-    <View style={styles.container}>
-      <Image 
-        source={require("../assets/images/Group 1.png")}
-        style={styles.image}
+    <ScrollView contentContainerStyle={styles.container}>
+      
+      <Image
+        source={require("../assets/images/people.png")}
+        style={styles.headerImage}
       />
 
       <Text style={styles.title}>
-        Let's Get You <Text style={styles.highlight}>Started</Text>
+        Let's get you <Text style={styles.highlight}>Started</Text>
       </Text>
 
       <Text style={styles.subtitle}>
-        What are you looking for exactly? Let's help you!
+        What are you looking for exactly? Let’s help you!
       </Text>
 
-      {/* Reusable dropdown inputs */}
-      <DropDownInput 
-        icon={require("../assets/images/house-building 3.png")}
-        placeholder="Type of Building"
-      />
+      {/* MAPPING THE DROPDOWNS */}
+      {DROPDOWN_DATA.map((item) => (
+        <DropDownInput
+          key={item.id}
+          icon={item.icon}
+          placeholder={item.placeholder}
+          options={item.options}
+        />
+      ))}
 
-      <DropDownInput 
-        icon={require("../assets/images/Component 7.png")}
-        placeholder="Construction Material"
-      />
-
-      <DropDownInput 
-        icon={require("../assets/images/Component 8.png")}
-        placeholder="Preferred Size"
-      />
-
-      <DropDownInput 
-        icon={require("../assets/images/Component 9.png")}
-        placeholder="Additional Services"
-      />
-
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} activeOpacity={0.8}>
         <Text style={styles.buttonText}>Submit</Text>
       </TouchableOpacity>
-    </View>
+    </ScrollView>
   );
 }
 
-/* ----------------------------------------------
-   STYLES
-------------------------------------------------*/
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    paddingHorizontal: 25,
-    justifyContent: "center",
+    padding: 20,
+    paddingTop: 40,
     alignItems: "center",
+    backgroundColor: "#fff",
   },
 
-  image: {
-    width: 180,
-    height: 140,
+  headerImage: {
+    width: 220,
+    height: 220,
+    resizeMode: "contain",
     marginBottom: 20,
   },
 
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: "700",
-    color: "#333",
-    textAlign: "center",
-    marginBottom: 5,
-    fontFamily: "poppins",
-  },
-  selectOption:{
-     fontSize: 13,
-     color: "#000",
-     marginBottom: 8,
-     fontFamily: "poppins",
-     fontWeight:"600",
-     justifyContent:"center",
-     alignItems:"center"
+    color: "#000",
   },
 
   highlight: {
-    color: PRIMARY_RED,
-    fontFamily: "poppins",
+    color: "#fe8b00",
   },
 
   subtitle: {
     fontSize: 14,
-    color: "#000",
-    textAlign: "center",
     marginBottom: 25,
-    paddingHorizontal: 10,
-    fontFamily: "poppins",
+    color: "#444",
+    textAlign: "center",
+    width: "90%",
   },
 
   inputContainer: {
-    width: "100%",
     flexDirection: "row",
     alignItems: "center",
     borderWidth: 1,
-    borderColor: "#5e5d5dff",
-    borderRadius: 16,
-    paddingHorizontal: 12,
-    height: 55,
-    marginBottom: 15,
+    borderColor: "#ddd",
+    borderRadius: 12,
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    backgroundColor: "#f8f8f8",
   },
 
   leftIcon: {
     width: 22,
     height: 22,
-    marginRight: 10,
+    resizeMode: "contain",
+    marginRight: 12,
   },
 
   input: {
     flex: 1,
     fontSize: 15,
-    fontFamily: "poppins",
-  },
-
-  rightIcon: {
-    marginLeft: 10,
+    color: "#000",
   },
 
   dropdown: {
-    backgroundColor: "#fafafa",
+    width: "100%",
+    backgroundColor: "#fff",
     borderWidth: 1,
-    borderColor: "#d0d0d0",
+    borderColor: "#ddd",
     borderRadius: 12,
     paddingVertical: 10,
+    marginTop: 8,
+
+    // shadow
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
+    elevation: 4,
+  },
+
+  selectOption: {
+    fontSize: 15,
+    fontWeight: "600",
     paddingHorizontal: 15,
-    marginTop: -10,
     marginBottom: 10,
+    color: "#000",
   },
 
   dropdownItem: {
-    paddingVertical: 8,
-    fontSize: 15,
-    fontFamily: "poppins",
+    paddingHorizontal: 15,
+    paddingVertical: 6,
   },
 
   button: {
-    backgroundColor: "#242424",
-    paddingVertical: 12,
-    borderRadius: 25,
     width: "100%",
+    backgroundColor: "#fe8b00",
+    paddingVertical: 15,
+    borderRadius: 12,
     alignItems: "center",
-    marginTop: 10,
+    marginTop: 20,
   },
 
   buttonText: {
-    color: "#fff",
     fontSize: 16,
-    fontFamily: "Poppins_600SemiBold",
+    fontWeight: "700",
+    color: "#fff",
   },
 });
