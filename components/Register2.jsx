@@ -94,7 +94,9 @@ export default function Register2Screen({ navigation }) {
         placeholder="Additional Services"
       />
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button}
+      onPress={() =>navigation.navigate("login")}
+      >
         <Text style={styles.buttonText}>Submit</Text>
       </TouchableOpacity>
     </View>

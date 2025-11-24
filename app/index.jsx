@@ -7,6 +7,7 @@ import RegisterScreen from '../components/Register.jsx';
 import confirmOTPScreen from '../components/confirmOTP.jsx';
 import VerifyOTPScreen from '../components/verifyOTP.jsx';
 import Register2Screen from '../components/Register2.jsx';
+import LoginScreen from "../components/login.jsx";
 const Stack = createNativeStackNavigator();
 
 export default function MainScreen() {
@@ -20,6 +21,7 @@ export default function MainScreen() {
             <Stack.Screen name="confirmOTP" component={confirmOTPScreen} />
             <Stack.Screen name="verifyOTP" component={VerifyOTPScreen} />
             <Stack.Screen name="Register2" component={Register2Screen} />
+            <Stack.Screen name="login" component={LoginScreen} />
           </Stack.Navigator>
     
   );
