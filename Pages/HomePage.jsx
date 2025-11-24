@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image, Text, StyleSheet, TouchableOpacity, TextInput, ScrollView } from "react-native";
 
-export default function HomePageScreen() {
+export default function HomePageScreen({navigation}) {
   return (
     <ScrollView
       style={{ flex: 1, backgroundColor: "#fff" }}
@@ -26,7 +26,7 @@ export default function HomePageScreen() {
           {/* SEARCH BAR */}
           <View style={styles.searchBar}>
             <Image
-              source={require("../assets/images/search.png")}
+              source={require("../assets/images/Vector.png")}
               style={styles.searchIcon}
             />
             <TextInput
@@ -43,19 +43,19 @@ export default function HomePageScreen() {
 
           <View style={styles.categoryRow}>
             <Image
-              source={require("../assets/images/store 2.png")}
+              source={require("../assets/images/store2.png")}
               style={styles.categoryIcon}
             />
             <Image
-              source={require("../assets/images/store 2.png")}
+              source={require("../assets/images/store2.png")}
               style={styles.categoryIcon}
             />
             <Image
-              source={require("../assets/images/store 2.png")}
+              source={require("../assets/images/store2.png")}
               style={styles.categoryIcon}
             />
             <Image
-              source={require("../assets/images/store 2.png")}
+              source={require("../assets/images/store2.png")}
               style={styles.categoryIcon}
             />
           </View>

@@ -17,7 +17,7 @@ import {
   Poppins_700Bold
 } from "@expo-google-fonts/poppins";
 
-export default function LoginScreen() {
+export default function LoginScreen({navigation}) {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
     Poppins_600SemiBold,
@@ -70,7 +70,9 @@ export default function LoginScreen() {
         </View>
 
         {/* LOGIN BUTTON */}
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button}
+         onPress={()=>navigation.navigate("Home")}
+        >
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
 
