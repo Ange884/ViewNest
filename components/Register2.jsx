@@ -35,13 +35,20 @@ function DropDownInput({ icon, placeholder }) {
 
       {/* Dropdown menu */}
       {open && (
-        <View style={styles.dropdown}>
-          <Text style={styles.selectOption}>make your  <Text style={styles.highlight}>choice </Text></Text>
-          <Text style={styles.dropdownItem}>Option 1</Text>
-          <Text style={styles.dropdownItem}>Option 2</Text>
-          <Text style={styles.dropdownItem}>Option 3</Text>
-        </View>
-      )}
+  <View style={styles.overlay}>
+    <TouchableOpacity style={styles.overlayBackground} onPress={() => setOpen(false)} />
+
+    <View style={styles.dropdownAbsolute}>
+      <Text style={styles.selectOption}>
+        make your <Text style={styles.highlight}>choice</Text>
+      </Text>
+      <Text style={styles.dropdownItem}>Option 1</Text>
+      <Text style={styles.dropdownItem}>Option 2</Text>
+      <Text style={styles.dropdownItem}>Option 3</Text>
+    </View>
+  </View>
+)}
+
     </View>
   );
 }
@@ -202,4 +209,33 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: "Poppins_600SemiBold",
   },
+
+  overlay: {
+  position: "absolute",
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  zIndex: 20,         // above everything
+  justifyContent: "center",
+  alignItems: "center",
+},
+overlayBackground: {
+  position: "absolute",
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  backgroundColor: "rgba(0,0,0,0.4)", // blur/dim effect
+},
+dropdownAbsolute: {
+  width: "80%",
+  backgroundColor: "#fafafa",
+  borderWidth: 1,
+  borderColor: "#d0d0d0",
+  borderRadius: 12,
+  paddingVertical: 10,
+  paddingHorizontal: 15,
+  zIndex: 30,  
+     }     // above overlay  
 });
