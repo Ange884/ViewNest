@@ -229,7 +229,7 @@ const styles = StyleSheet.create({
     right:0,
     paddingHorizontal: 15,
     paddingVertical: 8,
-    justifyContent: "center",
+    justifyContent:"flex-end",
     backgroundColor: "rgba(0,0,0,0.45)",
   },
 
