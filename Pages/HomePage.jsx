@@ -25,6 +25,14 @@ export default function HomePageScreen({ navigation }) {
 
   if (!fontsLoaded) return null;
 
+  const images= [
+    {uri: require("../assets/images/house1.png")},
+    {uri: require("../assets/images/conrad.png")},
+    {uri: require("../assets/images/house3.png")},
+    {uri: require("../assets/images/house4.png")},
+    {uri: require("../assets/images/house5.png")},
+  ]
+
   return (
     <ScrollView
       style={{ flex: 1, backgroundColor: "#fff" }}
@@ -105,7 +113,7 @@ export default function HomePageScreen({ navigation }) {
             {[1, 2, 3, 4, 5].map((i) => (
               <Image
                 key={i}
-                source={require("../assets/images/splash.png")}
+                source={}
                 style={styles.houseImage}
               />
             ))}
