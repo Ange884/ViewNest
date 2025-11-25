@@ -235,13 +235,14 @@ const styles = StyleSheet.create({
 
   priceText: {
     color: "#fff",
-    fontSize: 14,
+    fontSize: 16,
     fontFamily: "Poppins_600SemiBold",
   },
 
   locationText: {
     color: "#ddd",
-    fontSize: 12,
+    fontSize: 14,
     marginTop: 3,
+    fontFamily: "Poppins_400Regular",
   },
 });
