@@ -25,13 +25,14 @@ export default function HomePageScreen({ navigation }) {
 
   if (!fontsLoaded) return null;
 
-  const images= [
-    {uri: require("../assets/images/house1.png")},
-    {uri: require("../assets/images/conrad.png")},
-    {uri: require("../assets/images/house3.png")},
-    {uri: require("../assets/images/house4.png")},
-    {uri: require("../assets/images/house5.png")},
-  ]
+  // FIXED: correct structure for local image files
+  const images = [
+    require("../assets/images/house1.png"),
+    require("../assets/images/conrad.jpeg"),
+    require("../assets/images/house1.png"),
+    require("../assets/images/house2.png"),
+    require("../assets/images/conrad.jpeg"),
+  ];
 
   return (
     <ScrollView
@@ -44,14 +45,13 @@ export default function HomePageScreen({ navigation }) {
       }}
     >
       <View style={styles.container}>
-        {/* ---------- HEADER ---------- */}
+
+        {/* HEADER */}
         <View style={styles.headerPart}>
           <Image
             source={require("../assets/images/Ellipse 12.png")}
             style={styles.profilePic}
           />
-
-          {/* SEARCH BAR */}
           <View style={styles.searchBar}>
             <Ionicons name="search" size={22} color="#666" />
             <TextInput
@@ -62,63 +62,54 @@ export default function HomePageScreen({ navigation }) {
           </View>
         </View>
 
-        {/* ---------- CATEGORIES ---------- */}
+        {/* CATEGORIES */}
         <View style={styles.categorySection}>
           <Text style={styles.categories}>Categories</Text>
 
           <View style={styles.categoryRow}>
             <View style={styles.categoryItem}>
-              <Image
-                source={require("../assets/images/all.png")}
-                style={styles.categoryIcon}
-              />
+              <Image source={require("../assets/images/all.png")} style={styles.categoryIcon} />
               <Text style={styles.UnderText}>Home</Text>
             </View>
 
             <View style={styles.categoryItem}>
-              <Image
-                source={require("../assets/images/allStore.png")}
-                style={styles.categoryIcon}
-              />
+              <Image source={require("../assets/images/allStore.png")} style={styles.categoryIcon} />
               <Text style={styles.UnderText}>Store</Text>
             </View>
 
             <View style={styles.categoryItem}>
-              <Image
-                source={require("../assets/images/apartment.png")}
-                style={styles.categoryIcon}
-              />
+              <Image source={require("../assets/images/apartment.png")} style={styles.categoryIcon} />
               <Text style={styles.UnderText}>Apartment</Text>
             </View>
 
             <View style={styles.categoryItem}>
-              <Image
-                source={require("../assets/images/property.png")}
-                style={styles.categoryIcon}
-              />
+              <Image source={require("../assets/images/property.png")} style={styles.categoryIcon} />
               <Text style={styles.UnderText}>Property</Text>
             </View>
           </View>
         </View>
 
-        {/* ---------- HOUSES SECTION ---------- */}
+        {/* HOUSES SECTION */}
         <View style={styles.housesContainer}>
           <Text style={styles.categories}>Houses Near You</Text>
 
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={styles.imageRow}
+          <View
+           style={styles.imageRow} 
           >
-            {[1, 2, 3, 4, 5].map((i) => (
-              <Image
-                key={i}
-                source={}
-                style={styles.houseImage}
-              />
+            {images.map((img, index) => (
+              <View key={index} style={styles.houseCard}>
+                <Image source={img} style={styles.houseImage} />
+
+                {/* OVERLAY TEXT */}
+                <View style={styles.overlay}>
+                  <Text style={styles.priceText}>$1200 / month</Text>
+                  <Text style={styles.locationText}>Kigali, Gasabo</Text>
+                </View>
+              </View>
             ))}
-          </ScrollView>
+          </View>
         </View>
+
       </View>
     </ScrollView>
   );
@@ -132,7 +123,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
-  /* HEADER PART */
   headerPart: {
     flexDirection: "row",
     alignItems: "center",
@@ -146,7 +136,6 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
 
-  /* SEARCH BAR */
   searchBar: {
     flex: 1,
     height: 50,
@@ -167,24 +156,21 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins_400Regular",
   },
 
-  /* CATEGORY SECTION */
+  /* CATEGORIES */
   categorySection: {
     marginTop: 20,
   },
 
   categories: {
     fontSize: 20,
-    fontWeight: "600",
     color: "#222",
     marginBottom: 15,
-    fontFamily: "Poppins_600SemiBold",
+    fontFamily: "Poppins_700Bold",
   },
 
   categoryRow: {
     flexDirection: "row",
     justifyContent: "space-between",
-    flexWrap: "wrap",
-    width: "100%",
     marginTop: 15,
   },
 
@@ -204,7 +190,7 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins_400Regular",
   },
 
-  /* HOUSES SECTION */
+  /* HOUSES */
   housesContainer: {
     marginTop: 30,
   },
@@ -214,10 +200,38 @@ const styles = StyleSheet.create({
     gap: 15,
   },
 
+  houseCard: {
+    width: 230,
+    height: 160,
+    borderRadius: 18,
+    overflow: "hidden",
+    position: "relative",
+    backgroundColor: "#eee",
+  },
+
   houseImage: {
-    resizeMode:"contain",
-    alignItems:"center",
-    borderRadius: 15,
-    marginRight: 15,
+    width: "100%",
+    height: "100%",
+  },
+
+  /* OVERLAY */
+  overlay: {
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    padding: 10,
+    backgroundColor: "rgba(0,0,0,0.45)",
+  },
+
+  priceText: {
+    color: "#fff",
+    fontSize: 14,
+    fontFamily: "Poppins_600SemiBold",
+  },
+
+  locationText: {
+    color: "#ddd",
+    fontSize: 12,
+    marginTop: 3,
   },
 });
