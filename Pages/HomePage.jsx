@@ -78,8 +78,18 @@ export default function HomePageScreen({ navigation }) {
     </View>
   </View>
 </View>
+  <View style={styles.Houses-container}>
+    <Text style={styles.categories}>Houses Near You</Text>
+      <View style={styles.ImageContainer}>
+         <Image source={require("../assets/images/splash.png")} style={styles.HouseImage}/>
+         <Image source={require("../assets/images/splash.png")} style={styles.HouseImage}/>
+         <Image source={require("../assets/images/splash.png")} style={styles.HouseImage}/>
+         <Image source={require("../assets/images/splash.png")} style={styles.HouseImage}/>
+         <Image source={require("../assets/images/splash.png")} style={styles.HouseImage}/>
 
       </View>
+  </View>
+  </View>
     </ScrollView>
   );
 }
