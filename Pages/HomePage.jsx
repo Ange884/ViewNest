@@ -202,13 +202,13 @@ const styles = StyleSheet.create({
   },
 
   imageRow: {
-    flexDirection: "row",
+    flexDirection: "column",
     gap: 15,
   },
 
   houseImage: {
-    width: 200,
-    height: 140,
+    resizeMode:"contain",
+    alignItems:"center",
     borderRadius: 15,
     marginRight: 15,
   },
