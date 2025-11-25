@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
   },
 
   houseCard: {
-    width: 230,
+    width: "100%",
     height: 160,
     borderRadius: 18,
     overflow: "hidden",
