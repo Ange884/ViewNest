@@ -1,44 +1,80 @@
 import React from 'react';
-import {useFonts, Poppins_400regular, Poppins_600SemiBold, Poppins_700Bold} from '@expo-google-fonts/poppins';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {
+  useFonts,
+  Poppins_400Regular,
+  Poppins_600SemiBold,
+  Poppins_700Bold
+} from '@expo-google-fonts/poppins';
 
-export default function NavigationBar(){
-    const [fontsLoaded] = useFonts({
-        Poppins_400regular,
-        Poppins_600SemiBold,
-        Poppins_700Bold
-    });
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Image
+} from 'react-native';
 
-    if(!fontsLoaded) return null;
+export default function NavigationBar() {
+  const [fontsLoaded] = useFonts({
+    Poppins_400Regular,
+    Poppins_600SemiBold,
+    Poppins_700Bold
+  });
 
-    return(
-        <View style={styles.navbar}>
-            <TouchableOpacity>
-                <Image source={require('../assets/images/home-icon.png')} style={{width:24, height:24}} />
-                <Text style={styles.navItem}>Home</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-                <Text style={styles.navItem}>Search</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-                <Text style={styles.navItem}>Profile</Text>
-            </TouchableOpacity>
-        </View>
-    );
+  if (!fontsLoaded) return null;
+
+  return (
+    <View style={styles.navbar}>
+      
+      <TouchableOpacity style={styles.navItemContainer}>
+        <Image source={require('../assets/images/home.png')} style={styles.icon} />
+        <Text style={styles.navItem}>Home</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.navItemContainer}>
+        <Image source={require('../assets/images/exclaim.png')} style={styles.icon} />
+        <Text style={styles.navItem}>Alerts</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.navItemContainer}>
+        <Image source={require('../assets/images/hands.png')} style={styles.icon} />
+        <Text style={styles.navItem}>Support</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.navItemContainer}>
+        <Image source={require('../assets/images/duo.png')} style={styles.icon} />
+        <Text style={styles.navItem}>Chat</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.navItemContainer}>
+        <Image source={require('../assets/images/settings.png')} style={styles.icon} />
+        <Text style={styles.navItem}>Settings</Text>
+      </TouchableOpacity>
+
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    navbar: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        paddingVertical: 15,
-        backgroundColor: '#fff',
-        borderTopWidth: 1,
-        borderTopColor: '#ddd',
-    },
-    navItem: {
-        fontFamily: 'Poppins_600SemiBold',
-        fontSize: 16,
-        color: '#333',
-    },
+  navbar: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingVertical: 12,
+    backgroundColor: '#fff',
+    borderTopWidth: 1,
+    borderTopColor: '#ddd',
+  },
+  navItemContainer: {
+    alignItems: 'center',
+  },
+  icon: {
+    width: 26,
+    height: 26,
+    marginBottom: 2,
+  },
+  navItem: {
+    fontFamily: 'Poppins_600SemiBold',
+    fontSize: 12,
+    color: '#333',
+  },
 });

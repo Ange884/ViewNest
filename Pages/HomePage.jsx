@@ -15,6 +15,7 @@ import {
   Poppins_600SemiBold,
   Poppins_700Bold,
 } from "@expo-google-fonts/poppins";
+import NavigationBar from '../components/Navbar.jsx';
 
 export default function HomePageScreen({ navigation }) {
   const [fontsLoaded] = useFonts({
@@ -35,6 +36,7 @@ export default function HomePageScreen({ navigation }) {
   ];
 
   return (
+    <>
     <ScrollView
       style={{ flex: 1, backgroundColor: "#fff" }}
       contentContainerStyle={{
@@ -117,6 +119,10 @@ export default function HomePageScreen({ navigation }) {
 
       </View>
     </ScrollView>
+    <View>
+      <NavigationBar />
+    </View>
+    </>
   );
 }
 
