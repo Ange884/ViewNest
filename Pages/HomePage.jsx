@@ -27,9 +27,9 @@ export default function HomePageScreen({ navigation }) {
 
   // FIXED: correct structure for local image files
   const images = [
-    require("../assets/images/house1.png"),
+    require("../assets/images/splash.png"),
     require("../assets/images/conrad.jpeg"),
-    require("../assets/images/house1.png"),
+    require("../assets/images/splash.png"),
     require("../assets/images/house2.png"),
     require("../assets/images/conrad.jpeg"),
   ];
@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
 
   houseCard: {
     width: "100%",
-    height: 160,
+    height: 180,
     borderRadius: 18,
     overflow: "hidden",
     position: "relative",
@@ -217,9 +217,14 @@ const styles = StyleSheet.create({
   /* OVERLAY */
   overlay: {
     position: "absolute",
-    bottom: 0,
     width: "100%",
-    padding: 10,
+    bottom: 0,
+    top:0,
+    left:0,
+    right:0,
+    paddingHorizontal: 15,
+    paddingVertical: 8,
+    justifyContent: "center",
     backgroundColor: "rgba(0,0,0,0.45)",
   },
 
