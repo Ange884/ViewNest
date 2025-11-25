@@ -104,6 +104,9 @@ export default function HomePageScreen({ navigation }) {
                 <View style={styles.overlay}>
                   <Text style={styles.priceText}>$1200 / month</Text>
                   <Text style={styles.locationText}>Kigali, Gasabo</Text>
+                  {[1,2,3,4,5].map((star, index) =>(
+                    <Ionicons key={index} name="star" size={14} color="#ffd700" />
+                  ))}
                 </View>
               </View>
             ))}
