@@ -95,7 +95,6 @@ export default function HomePageScreen({ navigation }) {
         {/* HOUSES SECTION */}
         <View style={styles.housesContainer}>
           <Text style={styles.categories}>Houses Near You</Text>
-          <Image source={require("../assets/images/Saved.png")} style={styles.savedImg} />
 
           <View
            style={styles.imageRow}
@@ -105,6 +104,7 @@ export default function HomePageScreen({ navigation }) {
               <View key={index} style={styles.houseCard}>
   
                 <Image source={img} style={styles.houseImage} />
+                <Image source={require("../assets/images/Saved.png")} style={styles.savedImg} />
 
                 {/* OVERLAY TEXT */}
                 <View style={styles.overlay}>
@@ -259,8 +259,9 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
     position: "absolute",
-    top: 10,
-    right: 10,
+    top:10, 
+    right:10,
+    zIndex: 10,
     color: "#fff",
   },
 });
