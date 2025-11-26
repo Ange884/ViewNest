@@ -96,7 +96,8 @@ export default function HomePageScreen({ navigation }) {
           <Text style={styles.categories}>Houses Near You</Text>
 
           <View
-           style={styles.imageRow} 
+           style={styles.imageRow}
+           onPress={() => navigation.navigate('SelectPage')} 
           >
             {images.map((img, index) => (
               <View key={index} style={styles.houseCard}>
