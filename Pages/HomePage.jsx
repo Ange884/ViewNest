@@ -7,6 +7,7 @@ import {
   StyleSheet,
   TextInput,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 
 import {
@@ -94,6 +95,7 @@ export default function HomePageScreen({ navigation }) {
         {/* HOUSES SECTION */}
         <View style={styles.housesContainer}>
           <Text style={styles.categories}>Houses Near You</Text>
+          <Image source={require("../assets/images/Saved.png")} style={styles.savedImg} />
 
           <View
            style={styles.imageRow}
@@ -101,6 +103,7 @@ export default function HomePageScreen({ navigation }) {
           >
             {images.map((img, index) => (
               <View key={index} style={styles.houseCard}>
+  
                 <Image source={img} style={styles.houseImage} />
 
                 {/* OVERLAY TEXT */}
@@ -251,5 +254,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginTop: 3,
     fontFamily: "Poppins_400Regular",
+  },
+  savedImg: {
+    width: 25,
+    height: 25,
+    position: "absolute",
+    top: 10,
+    right: 10,
+    color: "#fff",
   },
 });
