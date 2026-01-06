@@ -126,7 +126,12 @@ export default function HomePageScreen({ navigation }) {
           >
 
             {houses.map((house) => (
-              <View key={house.id} style={styles.houseCard}>
+              <TouchableOpacity
+               key={house.id} 
+               style={styles.houseCard}
+               activeOpacity={0.9}
+               onPress={()=>navigation.navigate("HouseDetails", {house})}
+               >
   
                 <Image source={house.image} style={styles.houseImage} />
                 <Image source={require("../assets/images/Saved.png")} style={styles.savedImg} />
@@ -142,7 +147,7 @@ export default function HomePageScreen({ navigation }) {
                   ))}
                   </View>
                 </View>
-              </View>
+              </TouchableOpacity>
             ))}
 
 
