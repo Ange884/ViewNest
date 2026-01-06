@@ -28,13 +28,37 @@ export default function HomePageScreen({ navigation }) {
   if (!fontsLoaded) return null;
 
   // FIXED: correct structure for local image files
-  const images = [
-    require("../assets/images/splash.png"),
-    require("../assets/images/conrad.jpeg"),
-    require("../assets/images/splash.png"),
-    require("../assets/images/house2.png"),
-    require("../assets/images/conrad.jpeg"),
-  ];
+  const houses = [
+  {
+    id: 1,
+    image: require("../assets/images/splash.png"),
+    price: "$200 / month",
+    place: "Huye, Butare",
+    rating: 4,
+  },
+  {
+    id: 2,
+    image: require("../assets/images/conrad.jpeg"),
+    price: "$400 / month",
+    place: "Kigali, Kanombe",
+    rating: 5,
+  },
+  {
+    id: 3,
+    image: require("../assets/images/house2.png"),
+    price: "$200 / month",
+    place: "Muhanga, Gitarama",
+    rating: 3,
+  },
+  {
+    id: 4,
+    image: require("../assets/images/conrad.jpeg"),
+    price: "$600 / month",
+    place: "Kigali, Gasabo",
+    rating: 4,
+  },
+];
+
 
   return (
     <>
@@ -100,16 +124,18 @@ export default function HomePageScreen({ navigation }) {
            style={styles.imageRow}
            onPress={() => navigation.navigate('SelectPage')} 
           >
-            {images.map((img, index) => (
-              <View key={index} style={styles.houseCard}>
+
+            {houses.map((house) => (
+              <View key={house.id} style={styles.houseCard}>
   
-                <Image source={img} style={styles.houseImage} />
+                <Image source={house.image} style={styles.houseImage} />
                 <Image source={require("../assets/images/Saved.png")} style={styles.savedImg} />
 
                 {/* OVERLAY TEXT */}
                 <View style={styles.overlay}>
-                  <Text style={styles.priceText}>$1200 / month</Text>
-                  <Text style={styles.locationText}>Kigali, Gasabo</Text>
+                  <Text style={styles.priceText}>{house.price}</Text>
+                  <Text style={styles.locationText}>{house.place}</Text>
+                  {/*STARS*/}
                   <View style={{flexDirection: 'row', marginTop: 5}} >
                   {[1,2,3,4,5].map((star, index) =>(
                     <Ionicons key={index} name="star" size={14} color="#ffd700" />
@@ -118,6 +144,8 @@ export default function HomePageScreen({ navigation }) {
                 </View>
               </View>
             ))}
+
+
           </View>
         </View>
 
