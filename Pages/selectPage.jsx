@@ -12,6 +12,11 @@ export default function HouseDetails({ route }) {
       <Image source={house.image} style={styles.image} />
 
       {/* WHITE INFO CONTAINER */}
+     <View style={styles.floatingContainer}>
+         
+         </View>
+
+
       <View style={styles.detailsContainer}>
 
         <Text style={styles.price}>{house.price}</Text>
